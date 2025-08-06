@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgive me please</title>
+  <style>
+    body{
+      background-color: pink;
+    }
+    .box{
+      height: 500px;
+      width: 700px;
+      background-color: white;
+      position:absolute;
+     top: 15vh;
+     left: 27vw;
+     border-radius: 5px;
+    }
+    .img{
+      height: 250px;
+      width: 250px; 
+      border-radius: 20 px;        
+      background-image: url(image.png);
+      /* background-size: 170px 150px; */
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 50px;
+      left: 250px;
+          
+    }
+    .text{
+       position: absolute;
+      top: 270px;
+      left: 200px; 
+      font-size: 40px;
+      color: rgb(242, 110, 132); 
+    }
+    .btn{
+      height: 40px;
+      width: 80px;
+      border: 8px solid transparent;
+      border-radius: 5px;
+      background-color: rgb(214, 132, 145);
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    .yes{
+      position: absolute;
+      top: 400px;
+      left: 280px; 
+    }
+    .no{
+      position: absolute;
+      top: 400px;
+      left: 400px; 
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="img" id="img"></div>
+    <p class="text" id="text">Will You Forgive me?</p>
+    <button class="yes btn" id="yesBtn" onclick="
+    YesButton();
+    ">Yes</button>
+    <button class="no btn" id="noBtn" onclick="
+    NoButton();
+    ">No</button>
+  </div>
+  <script>
+    function NoButton() {
+    const button = document.getElementById("noBtn");
+
+    // Get viewport size
+    const maxWidth = window.innerWidth;
+    const maxHeight = window.innerHeight;
+
+    // Get button size
+    const btnWidth = button.offsetWidth;
+    const btnHeight = button.offsetHeight;
+
+    
+    const x = Math.floor(Math.random() * window.innerWidth - 100); // minus button width
+    const y = Math.floor(Math.random() * window.innerHeight - 50); // minus button height
+
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+  }
+  function YesButton(){
+     const but=document.getElementById('img');
+     but.style.backgroundImage = "url('imagecopy.png')";
+     document.getElementById("text").textContent = "Thanks I knew u would!";
+  }
+  </script>
+</body>
+</html>
